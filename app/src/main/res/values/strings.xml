@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">QrUrbanoMaterial</string>
+    <string name="username_label">Username</string>
+    <string name="password_label">Password</string>
+    <string name="app_bar_name">Urbano Qr </string>
+    <string name="login">Login</string>
+    <string name="menu_string">LogOut</string>
+    <string name="button_scan">Scan Qr</string>
+
+    <string name="solicitante_name">Datos del Solicitante</string>
+    <string name="vig1">Vigencia 1</string>
+    <string name="vig2">Vigencia 2</string>
+    <string name="solicitanteName">Nombre del Solicitante</string>
+    <string name="solicitanteDomicilio">Domicilio del Solicitante</string>
+    <string name="solicitanteTel">Telefono</string>
+    <string name="solicitanteObraPredial">Obra predial</string>
+</resources>
+

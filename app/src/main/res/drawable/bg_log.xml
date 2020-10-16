@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <gradient
+                android:startColor="@color/bg_whi_gra"
+                android:endColor="@color/bg_rd_gra"
+                android:angle="-90" />
+        </shape>
+    </item>
+    <item>
+        <bitmap
+            android:src="@drawable/plaza"
+            android:alpha="0.4"
+            />
+    </item>
+</layer-list>
