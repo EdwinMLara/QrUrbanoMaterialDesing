@@ -7,12 +7,24 @@
     <string name="menu_string">LogOut</string>
     <string name="button_scan">Scan Qr</string>
 
-    <string name="solicitante_name">Datos del Solicitante</string>
+    <string name="solicitanteTag">Datos del Solicitante</string>
     <string name="vig1">Vigencia 1</string>
     <string name="vig2">Vigencia 2</string>
     <string name="solicitanteName">Nombre del Solicitante</string>
     <string name="solicitanteDomicilio">Domicilio del Solicitante</string>
     <string name="solicitanteTel">Telefono</string>
     <string name="solicitanteObraPredial">Obra predial</string>
+
+    <string name="propietarioTag">Datos del Propietario</string>
+    <string name="propietarioName">Nombre del Propietario</string>
+    <string name="propietarioDomicilio">Domicilio del Propietario</string>
+    <string name="propietarioNumeroRegistro">Número de Registro</string>
+
+
+    <string name="obraTag">Datos del Obra</string>
+    <string name="cuentaPredialObra">Cuenta predial</string>
+    <string name="ubicacionObra">Ubicacion de la obra</string>
+    <string name="destinoObra">Destino de la construcción</string>
+    <string name="superficieObra">Superficie de la costrucción</string>
 </resources>
 
