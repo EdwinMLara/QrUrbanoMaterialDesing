@@ -12,7 +12,7 @@
     <color name="login_botton_color_fonde">#D50000</color>
     <color name="login_botton_letras">#D50000</color>
 
-    <color name="solicitante">#ef9a9a</color>
-    <color name="propietario">#e57373</color>
-    <color name="obra">#ef5350</color>
+    <color name="solicitante">#ef5350</color>
+    <color name="propietario">#f44336</color>
+    <color name="obra">#e53935</color>
 </resources>

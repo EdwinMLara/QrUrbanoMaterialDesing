@@ -22,6 +22,8 @@
             android:text="@string/propietarioTag"
             android:textAlignment="center"
             android:textSize="30dp"
+            android:textColor="@color/bg_whi_gra"
+            android:layout_marginBottom="25dp"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -29,12 +31,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/propietarioName"
+            android:textColorHint="@color/bg_whi_gra"
+            app:endIconTint="@color/bg_whi_gra"
+            android:layout_marginBottom="15dp"
             app:endIconDrawable="@drawable/ic_person_black_24dp"
             app:endIconMode="custom">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -43,23 +52,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/propietarioDomicilio"
+            android:textColorHint="@color/bg_whi_gra"
+            app:endIconTint="@color/bg_whi_gra"
+            android:layout_marginBottom="15dp"
             app:endIconDrawable="@drawable/ic_home_black_24dp"
             app:endIconMode="custom">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/propietarioNumeroRegistro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/propietarioNumeroRegistro">
+            android:hint="@string/propietarioNumeroRegistro"
+            android:textColorHint="@color/bg_whi_gra"
+            app:endIconTint="@color/bg_whi_gra">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
