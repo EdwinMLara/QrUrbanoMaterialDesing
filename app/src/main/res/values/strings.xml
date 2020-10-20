@@ -4,7 +4,11 @@
     <string name="password_label">Password</string>
     <string name="app_bar_name">Urbano Qr </string>
     <string name="login">Login</string>
-    <string name="menu_string">LogOut</string>
+
+    <string name="menu_string_buscar">buscar</string>
+    <string name="menu_string_subMenu">subMenu</string>
+    <string name="menu_string_logout">LogOut</string>
+
     <string name="button_scan">Scan Qr</string>
 
     <string name="solicitanteTag">Datos del Solicitante</string>

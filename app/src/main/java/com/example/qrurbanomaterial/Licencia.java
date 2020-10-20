@@ -2,16 +2,24 @@ package com.example.qrurbanomaterial;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Licencia extends AppCompatActivity {
 
+    private static final String TAG = Licencia.class.getSimpleName();
+
     private BottomNavigationView bottomNavigationView;
+    private MaterialToolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +27,7 @@ public class Licencia extends AppCompatActivity {
         setContentView(R.layout.activity_licencia);
 
         bottomNavigationView = findViewById(R.id.button_navigation);
+        toolbar = findViewById(R.id.main_toolbar);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -40,5 +49,25 @@ public class Licencia extends AppCompatActivity {
                 return true;
             }
         });
+
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.buscar:
+                        Toast.makeText(Licencia.this,"buscar",Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.logout:
+                        Toast.makeText(Licencia.this,"Logout",Toast.LENGTH_SHORT).show();
+                        break;
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + item.getItemId());
+                }
+
+                Log.v(TAG,"entrando al evento");
+                return true;
+            }
+        });
+
     }
 }
