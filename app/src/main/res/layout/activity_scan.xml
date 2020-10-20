@@ -34,18 +34,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/contentDescriptionQrimage"
             app:srcCompat="@drawable/qt" />
 
         <Button
             android:id="@+id/buttonScan"
-            style="@style/Widget.MaterialComponents.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:text="@string/button_scan"
             android:textColor="@color/bg_whi_gra"
-            android:textSize="26dp"
+            android:textSize="26sp"
             android:textStyle="bold"
             app:backgroundTint="@color/login_botton_color_fonde"
             app:layout_constraintBottom_toBottomOf="parent"

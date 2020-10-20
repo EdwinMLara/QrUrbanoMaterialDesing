@@ -10,6 +10,10 @@
     <string name="menu_string_logout">LogOut</string>
 
     <string name="button_scan">Scan Qr</string>
+    <string name="Tag_Login">Urbano Login</string>
+
+    <string name="contentDescriptionQrimage">Qr de prueba</string>
+    <string name="contentDescriptionLogoimage">Logo image</string>
 
     <string name="solicitanteTag">Datos del Solicitante</string>
     <string name="vig1">Vigencia 1</string>
