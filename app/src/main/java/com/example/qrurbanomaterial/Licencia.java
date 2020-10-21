@@ -28,6 +28,7 @@ public class Licencia extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.button_navigation);
         toolbar = findViewById(R.id.main_toolbar);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_placeholder,new SolicitanteFragment()).commit();
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
