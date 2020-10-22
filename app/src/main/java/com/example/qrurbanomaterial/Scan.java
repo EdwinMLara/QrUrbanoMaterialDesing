@@ -111,7 +111,6 @@ public class Scan extends AppCompatActivity {
             String result = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
             Log.v(TAG, result);
             //getDataLicenced(result);
-
         }
     }
 

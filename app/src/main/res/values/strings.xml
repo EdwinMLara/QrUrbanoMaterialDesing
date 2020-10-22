@@ -3,7 +3,12 @@
     <string name="username_label">Username</string>
     <string name="password_label">Password</string>
     <string name="app_bar_name">Urbano Qr </string>
+
     <string name="login">Login</string>
+    <string name="error_empty_username">Error de Usuario</string>
+    <string name="error_empty_password">Error de Contraseña</string>
+
+
 
     <string name="menu_string_buscar">buscar</string>
     <string name="menu_string_subMenu">subMenu</string>
