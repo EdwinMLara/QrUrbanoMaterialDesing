@@ -49,7 +49,7 @@ public class UriangatoClassService {
                 .create(Uriangatoservice.class);
     }
 
-    public static final Uriangatoservice getLicenciaByToken(final String token){
+    public static final Uriangatoservice getLicenciaByToken(String token){
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
             @Override
             public Response intercept(Chain chain) throws IOException {
