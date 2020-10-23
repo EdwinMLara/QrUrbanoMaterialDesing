@@ -27,7 +27,7 @@
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/cuentaPredialObra"
+            android:id="@+id/layoutCuentaPredialObra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/bg_whi_gra"
@@ -36,6 +36,7 @@
             android:hint="@string/cuentaPredialObra">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textCuentaPredialObra"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="false"
@@ -45,7 +46,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/ubicaionObra"
+            android:id="@+id/layoutUbicaionObra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/bg_whi_gra"
@@ -56,6 +57,7 @@
             app:endIconMode="custom">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textUbicacionObra"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="false"
@@ -65,7 +67,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/destinoObra"
+            android:id="@+id/layoutDestinoObra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/bg_whi_gra"
@@ -73,6 +75,7 @@
             android:hint="@string/destinoObra">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textDestinoObra"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="false"
@@ -82,7 +85,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/superficieObra"
+            android:id="@+id/layoutSuperficieObra"
             android:layout_width="match_parent"
             android:textColorHint="@color/bg_whi_gra"
             android:layout_height="wrap_content"
@@ -90,6 +93,7 @@
             android:hint="@string/superficieObra">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textSuperficieObra"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="false"

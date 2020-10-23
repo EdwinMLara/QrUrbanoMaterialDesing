@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -13,6 +14,9 @@ import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.gson.Gson;
+
 
 public class Licencia extends AppCompatActivity {
 
@@ -20,6 +24,8 @@ public class Licencia extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private MaterialToolbar toolbar;
+    private View rootViewFragment;
+    private LicenciaModel li = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +34,16 @@ public class Licencia extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.button_navigation);
         toolbar = findViewById(R.id.main_toolbar);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_placeholder,new SolicitanteFragment()).commit();
+
+        Intent intenGetStringJsonLicencia = getIntent();
+        if(intenGetStringJsonLicencia.hasExtra("jsonStringLicencia")){
+            String jsonStringLicencia = intenGetStringJsonLicencia.getStringExtra("jsonStringLicencia");
+            Log.v(TAG,jsonStringLicencia);
+            Gson gson = new Gson();
+            li = gson.fromJson(jsonStringLicencia,LicenciaModel.class);
+            Fragment incialFragment = fragmentLoadTransaction(new SolicitanteFragment());
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_placeholder,incialFragment).commit();
+        }
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -36,16 +51,15 @@ public class Licencia extends AppCompatActivity {
                 Fragment selectedFragment = null;
                 switch (item.getItemId()){
                     case R.id.page1:
-                        selectedFragment = new SolicitanteFragment();
+                        selectedFragment = fragmentLoadTransaction(new SolicitanteFragment());
                         break;
                     case R.id.page2:
-                        selectedFragment = new PropieatarioFragment();
+                        selectedFragment = fragmentLoadTransaction(new PropieatarioFragment());
                         break;
                     case R.id.page3:
-                        selectedFragment = new ObraFragment();
+                        selectedFragment = fragmentLoadTransaction(new ObraFragment());
                         break;
                 }
-
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_placeholder,selectedFragment).commit();
                 return true;
             }
@@ -69,6 +83,12 @@ public class Licencia extends AppCompatActivity {
                 return true;
             }
         });
+    }
 
+    public Fragment fragmentLoadTransaction(Fragment fragment){
+        Bundle inicialBundle = new Bundle();
+        inicialBundle.putParcelable("datos",li);
+        fragment.setArguments(inicialBundle);
+        return fragment;
     }
 }

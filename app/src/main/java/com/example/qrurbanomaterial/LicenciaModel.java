@@ -60,12 +60,12 @@ public class LicenciaModel implements Parcelable {
         }
     };
 
-    public int getNumero_recibo() {
-        return numero_recibo;
-    }
-
     public void setNumero_recibo(int numero_recibo) {
         this.numero_recibo = numero_recibo;
+    }
+
+    public int getNumero_recibo() {
+        return numero_recibo;
     }
 
     public String getVegencia1() {
@@ -84,16 +84,16 @@ public class LicenciaModel implements Parcelable {
         this.vigencia2 = vigencia2;
     }
 
-    public String getNombre_solicitante() {
-        return nombre_solicitante;
-    }
-
     public void setNombre_solicitante(String nombre_solicitante) {
         this.nombre_solicitante = nombre_solicitante;
     }
 
+    public String getNombre_solicitante() {
+        return this.nombre_solicitante;
+    }
+
     public String getDomicilio_solicitante() {
-        return domicilio_solicitante;
+        return this.domicilio_solicitante;
     }
 
     public void setDomicilio_solicitante(String domicilio_solicitante) {
@@ -101,7 +101,7 @@ public class LicenciaModel implements Parcelable {
     }
 
     public String getCiudad_solicitante() {
-        return ciudad_solicitante;
+        return this.ciudad_solicitante;
     }
 
     public void setCiudad_solicitante(String ciudad_solicitante) {
@@ -109,7 +109,7 @@ public class LicenciaModel implements Parcelable {
     }
 
     public String getTelefono_solicitante() {
-        return telefono_solicitante;
+        return this.telefono_solicitante;
     }
 
     public void setTelefono_solicitante(String telefono_solicitante) {
@@ -117,7 +117,7 @@ public class LicenciaModel implements Parcelable {
     }
 
     public int getPredial_obra() {
-        return predial_obra;
+        return this.predial_obra;
     }
 
     public void setPredial_obra(int predial_obra) {
@@ -125,7 +125,7 @@ public class LicenciaModel implements Parcelable {
     }
 
     public String getUbicaion_obra() {
-        return ubicaion_obra;
+        return this.ubicaion_obra;
     }
 
     public void setUbicaion_obra(String ubicaion_obra) {
@@ -133,7 +133,7 @@ public class LicenciaModel implements Parcelable {
     }
 
     public int getSuperficie_obra() {
-        return superficie_obra;
+        return this.superficie_obra;
     }
 
     public void setSuperficie_obra(int superficie_obra) {
@@ -141,7 +141,7 @@ public class LicenciaModel implements Parcelable {
     }
 
     public String getDocumentos_obra() {
-        return documentos_obra;
+        return this.documentos_obra;
     }
 
     public void setDocumentos_obra(String documentos_obra) {
@@ -149,7 +149,7 @@ public class LicenciaModel implements Parcelable {
     }
 
     public String getFecha() {
-        return fecha;
+        return this.fecha;
     }
 
     public void setFecha(String fecha) {
@@ -157,7 +157,7 @@ public class LicenciaModel implements Parcelable {
     }
 
     public String getStatus() {
-        return status;
+        return this.status;
     }
 
     public void setStatus(String status) {
@@ -165,7 +165,7 @@ public class LicenciaModel implements Parcelable {
     }
 
     public String getNombre_suscriptor() {
-        return nombre_suscriptor;
+        return this.nombre_suscriptor;
     }
 
     public void setNombre_suscriptor(String nombre_suscriptor) {
@@ -173,7 +173,7 @@ public class LicenciaModel implements Parcelable {
     }
 
     public int getNumero_perio() {
-        return numero_perito;
+        return this.numero_perito;
     }
 
     public void setNumero_perio(int numero_perio) {
@@ -181,7 +181,7 @@ public class LicenciaModel implements Parcelable {
     }
 
     public String getDomicilio_suscritor() {
-        return domicilio_suscritor;
+        return this.domicilio_suscritor;
     }
 
     public void setDomicilio_suscritor(String domicilio_suscritor) {
@@ -189,7 +189,7 @@ public class LicenciaModel implements Parcelable {
     }
 
     public String getObservaciones() {
-        return observaciones;
+        return this.observaciones;
     }
 
     public void setObservaciones(String observaciones) {
@@ -197,7 +197,7 @@ public class LicenciaModel implements Parcelable {
     }
 
     public int getNumero_licencia() {
-        return numero_licencia;
+        return this.numero_licencia;
     }
 
     public void setNumero_licencia(int numero_licencia) {
@@ -205,7 +205,7 @@ public class LicenciaModel implements Parcelable {
     }
 
     public String getImage() {
-        return image;
+        return this.image;
     }
 
     public void setImage(String image) {
@@ -213,7 +213,7 @@ public class LicenciaModel implements Parcelable {
     }
 
     public String getPdf() {
-        return pdf;
+        return this.pdf;
     }
 
     public void setPdf(String pdf) {
