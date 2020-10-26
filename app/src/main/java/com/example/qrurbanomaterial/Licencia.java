@@ -24,7 +24,6 @@ public class Licencia extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private MaterialToolbar toolbar;
-    private View rootViewFragment;
     private LicenciaModel li = null;
 
     @Override
@@ -73,7 +72,9 @@ public class Licencia extends AppCompatActivity {
                         Toast.makeText(Licencia.this,"buscar",Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.logout:
-                        Toast.makeText(Licencia.this,"Logout",Toast.LENGTH_SHORT).show();
+                        Intent intentLogout  = new Intent(Licencia.this,MainActivity.class);
+                        intentLogout.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intentLogout);
                         break;
                     default:
                         throw new IllegalStateException("Unexpected value: " + item.getItemId());

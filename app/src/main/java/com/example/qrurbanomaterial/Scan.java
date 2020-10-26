@@ -75,7 +75,9 @@ public class Scan extends AppCompatActivity {
                         Toast.makeText(Scan.this,"buscar",Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.logout:
-                        Toast.makeText(Scan.this,"Logout",Toast.LENGTH_SHORT).show();
+                        Intent intentLogout  = new Intent(Scan.this,MainActivity.class);
+                        intentLogout.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intentLogout);
                         break;
                     default:
                         throw new IllegalStateException("Unexpected value: " + item.getItemId());
