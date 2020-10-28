@@ -9,12 +9,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
 
 
@@ -36,10 +34,10 @@ public class Licencia extends AppCompatActivity {
 
         Intent intenGetStringJsonLicencia = getIntent();
         if(intenGetStringJsonLicencia.hasExtra("jsonStringLicencia")){
-            String jsonStringLicencia = intenGetStringJsonLicencia.getStringExtra("jsonStringLicencia");
-            Log.v(TAG,jsonStringLicencia);
+            String datos = intenGetStringJsonLicencia.getStringExtra("jsonStringLicencia");
+            Log.v(TAG,datos);
             Gson gson = new Gson();
-            li = gson.fromJson(jsonStringLicencia,LicenciaModel.class);
+            li = gson.fromJson(datos,LicenciaModel.class);
             Fragment incialFragment = fragmentLoadTransaction(new SolicitanteFragment());
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_placeholder,incialFragment).commit();
         }

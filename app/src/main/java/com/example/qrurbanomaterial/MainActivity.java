@@ -15,6 +15,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private TextInputEditText editTextPassword;
     private Button buttonLogin;
     private String username,password,token;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +54,12 @@ public class MainActivity extends AppCompatActivity {
         textInputLayoutPassword = findViewById(R.id.textInputLayoutPassword);
         editTextPassword = findViewById(R.id.password);
 
+        progressBar = findViewById(R.id.progressBar);
+
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
                 attempLogin();
             }
         });
@@ -84,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         if(cancel){
             textInputLayoutUsername.setErrorEnabled(true);
             textInputLayoutPassword.setErrorEnabled(true);
+            progressBar.setVisibility(View.GONE);
         }else{
             if(ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED){
                 ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.INTERNET},REQUEST_CODE_INTERNET_PERMISSION);
@@ -115,8 +121,10 @@ public class MainActivity extends AppCompatActivity {
                         Intent tokenLoginIntent = new Intent(MainActivity.this, Scan.class);
                         tokenLoginIntent.putExtra("token", token);
                         tokenLoginIntent.putExtra("isLogged", true);
+                        progressBar.setVisibility(View.GONE);
                         startActivity(tokenLoginIntent);
                     }else{
+                        progressBar.setVisibility(View.GONE);
                         AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
                         alertDialog.setTitle("ServerError " + responseServer.get("status").getAsString() );
                         alertDialog.setMessage(responseServer.get("result").getAsString());

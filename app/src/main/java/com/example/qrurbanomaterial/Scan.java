@@ -21,6 +21,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import retrofit2.Call;
@@ -28,6 +30,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import com.google.android.material.appbar.MaterialToolbar;
+
+import java.net.URLEncoder;
+import java.util.Iterator;
 
 public class Scan extends AppCompatActivity {
     private static final String TAG = Scan.class.getSimpleName();
@@ -169,8 +174,10 @@ public class Scan extends AppCompatActivity {
                         JsonObject jsonResult = responseServer.getAsJsonObject("result");
                         if(jsonResult != null){
                             JsonObject jsonLicencia = jsonResult.getAsJsonObject("licencia");
+
                             Intent intentDatosLicencia = new Intent(Scan.this,Licencia.class);
                             intentDatosLicencia.putExtra("jsonStringLicencia",jsonLicencia.toString());
+
                             startActivity(intentDatosLicencia);
                         }
 

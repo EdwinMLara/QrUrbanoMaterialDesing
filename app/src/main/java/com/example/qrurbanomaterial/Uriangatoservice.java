@@ -9,7 +9,7 @@ import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 public interface Uriangatoservice {
-    public String BASE_URL= "http://192.168.11.59:8080/urbano1.5/core/api/";
+    public String BASE_URL= "http://intranet.uriangato.gob.mx/urbano1.5/core/api/";
     public String HASH_KEY = "encrypted";
 
     @GET("construcion-api.php")
