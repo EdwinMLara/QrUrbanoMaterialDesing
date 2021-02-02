@@ -2,6 +2,7 @@ package com.example.qrurbanomaterial;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
 public class LicenciaModel implements Parcelable {
     private String vigencia1 = "";
     private String vigencia2 = "";
@@ -10,14 +11,15 @@ public class LicenciaModel implements Parcelable {
     private String ciudad_solicitante = "";
     private String telefono_solicitante = "";
     private String predial_obra = "";
-    private String ubicaion_obra = "";
+    private String ubicacion_obra = "";
+    private String destino_obra = "";
     private String superficie_obra ="";
     private String documentos_obra = "";
     private String fecha= "";
     private String status= "";
     private String nombre_suscriptor = "";
     private String numero_perito;
-    private String domicilio_suscritor = "";
+    private String domicilio_suscriptor = "";
     private String observaciones = "";
     private String numero_licencia = "";
     private String image = "";
@@ -25,6 +27,7 @@ public class LicenciaModel implements Parcelable {
     private String numero_recibo = "";
 
     public LicenciaModel(){}
+
     protected LicenciaModel(Parcel in){
         vigencia1 = in.readString();
         vigencia2 = in.readString();
@@ -33,14 +36,15 @@ public class LicenciaModel implements Parcelable {
         ciudad_solicitante = in.readString();
         telefono_solicitante = in.readString();
         predial_obra = in.readString();
-        ubicaion_obra = in.readString();
+        ubicacion_obra = in.readString();
+        destino_obra = in.readString();
         superficie_obra = in.readString();
         documentos_obra = in.readString();
         fecha = in.readString();
         status = in.readString();
         nombre_suscriptor = in.readString();
         numero_perito = in.readString();
-        domicilio_suscritor = in.readString();
+        domicilio_suscriptor = in.readString();
         observaciones = in.readString();
         numero_licencia = in.readString();
         image = in.readString();
@@ -125,12 +129,16 @@ public class LicenciaModel implements Parcelable {
     }
 
     public String getUbicaion_obra() {
-        return this.ubicaion_obra;
+        return this.ubicacion_obra;
     }
 
     public void setUbicaion_obra(String ubicaion_obra) {
-        this.ubicaion_obra = ubicaion_obra;
+        this.ubicacion_obra = ubicaion_obra;
     }
+
+    public void setDestino_obra(String destino_obra){this.destino_obra = destino_obra;}
+
+    public String getDestino_obra(){return this.destino_obra;}
 
     public String getSuperficie_obra() {
         return this.superficie_obra;
@@ -181,11 +189,11 @@ public class LicenciaModel implements Parcelable {
     }
 
     public String getDomicilio_suscritor() {
-        return this.domicilio_suscritor;
+        return this.domicilio_suscriptor;
     }
 
     public void setDomicilio_suscritor(String domicilio_suscritor) {
-        this.domicilio_suscritor = domicilio_suscritor;
+        this.domicilio_suscriptor = domicilio_suscritor;
     }
 
     public String getObservaciones() {
@@ -234,14 +242,15 @@ public class LicenciaModel implements Parcelable {
         dest.writeString(ciudad_solicitante);
         dest.writeString(telefono_solicitante);
         dest.writeString(predial_obra);
-        dest.writeString(ubicaion_obra);
+        dest.writeString(ubicacion_obra);
+        dest.writeString(destino_obra);
         dest.writeString(superficie_obra);
         dest.writeString(documentos_obra);
         dest.writeString(fecha);
         dest.writeString(status);
         dest.writeString(nombre_suscriptor);
         dest.writeString(numero_perito);
-        dest.writeString(domicilio_suscritor);
+        dest.writeString(domicilio_suscriptor);
         dest.writeString(observaciones);
         dest.writeString(numero_licencia);
         dest.writeString(image);

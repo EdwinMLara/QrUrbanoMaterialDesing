@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">QrUrbanoMaterial</string>
-    <string name="username_label">Username</string>
-    <string name="password_label">Password</string>
+    <string name="username_label">email</string>
+    <string name="password_label">Contraseña</string>
     <string name="app_bar_name">Urbano Qr </string>
 
     <string name="login">Login</string>

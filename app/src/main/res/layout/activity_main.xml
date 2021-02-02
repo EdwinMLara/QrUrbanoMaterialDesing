@@ -74,13 +74,22 @@
             android:layout_height="wrap_content"
             android:hint="@string/username_label"
             app:endIconMode="custom"
+            android:textColorHint="@color/municipioColor"
+            android:layout_marginBottom="10dp"
             app:endIconDrawable="@drawable/ic_person_black_24dp"
-            app:endIconContentDescription="@string/username_label">
+            app:endIconContentDescription="@string/username_label"
+            app:endIconTint="@color/municipioColor"
+            app:hintTextColor="@color/bg_blk_gra"
+            app:errorEnabled="true"
+            app:errorTextColor="@color/bg_blk_gra"
+            app:counterEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:background="@color/qr_code_white"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp" />
 
@@ -91,13 +100,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password_label"
-            app:endIconMode="password_toggle">
-
+            android:textColorHint="@color/municipioColor"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/municipioColor"
+            app:hintTextColor="@color/bg_blk_gra"
+            app:errorTextColor="@color/bg_blk_gra"
+            app:helperTextEnabled="false">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
+                android:paddingLeft="10dp"
+                android:background="@color/qr_code_white"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp" />
 
@@ -110,13 +125,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/login"
-        android:textSize="26sp"
+        android:textSize="24sp"
         android:textColor="@color/bg_whi_gra"
         android:textStyle="bold"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         app:backgroundTint="@color/login_botton_color_fonde"
         android:background="@drawable/round_corner"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

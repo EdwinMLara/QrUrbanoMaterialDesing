@@ -4,8 +4,10 @@
     <color name="colorPrimaryDark">#E57373</color>
     <color name="colorAccent">#03DAC5</color>
 
+    <color name="municipioColor">#CD1417</color>
+
     <color name="bg_rd_gra">#F44336</color>
-    <color name="bg_whi_gra">#FFFFFF</color>
+    <color id="white" name="bg_whi_gra">#FFFFFF</color>
     <color name="bg_blk_gra">#000000</color>
 
 

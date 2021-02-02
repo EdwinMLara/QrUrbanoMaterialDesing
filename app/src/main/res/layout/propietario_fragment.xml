@@ -31,9 +31,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/propietarioName"
-            android:textColorHint="@color/bg_whi_gra"
+            android:textColorHint="@color/municipioColor"
             app:endIconTint="@color/bg_whi_gra"
             android:layout_marginBottom="15dp"
+            android:layout_margin="5dp"
+            app:hintTextColor="@color/bg_blk_gra"
             app:endIconDrawable="@drawable/ic_person_black_24dp"
             app:endIconMode="custom">
 
@@ -41,6 +43,8 @@
                 android:id="@+id/textPropietarioName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/bg_whi_gra"
+                android:paddingLeft="10dp"
                 android:clickable="false"
                 android:cursorVisible="false"
                 android:focusable="false"
@@ -53,9 +57,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/propietarioDomicilio"
-            android:textColorHint="@color/bg_whi_gra"
-            app:endIconTint="@color/bg_whi_gra"
+            android:textColorHint="@color/municipioColor"
+            app:endIconTint="@color/municipioColor"
             android:layout_marginBottom="15dp"
+            android:layout_margin="5dp"
+            app:hintTextColor="@color/bg_blk_gra"
             app:endIconDrawable="@drawable/ic_home_black_24dp"
             app:endIconMode="custom">
 
@@ -63,6 +69,8 @@
                 android:id="@+id/textPropietarioDomicilio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:background="@color/bg_whi_gra"
                 android:clickable="false"
                 android:cursorVisible="false"
                 android:focusable="false"
@@ -74,13 +82,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/propietarioNumeroRegistro"
-            android:textColorHint="@color/bg_whi_gra"
-            app:endIconTint="@color/bg_whi_gra">
+            android:layout_margin="5dp"
+            app:hintTextColor="@color/bg_blk_gra"
+            android:textColorHint="@color/municipioColor"
+            app:endIconTint="@color/municipioColor">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textPropietarioNumeroRegistro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/bg_whi_gra"
+                android:paddingLeft="10dp"
                 android:clickable="false"
                 android:cursorVisible="false"
                 android:focusable="false"

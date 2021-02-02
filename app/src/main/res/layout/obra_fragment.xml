@@ -30,15 +30,17 @@
             android:id="@+id/layoutCuentaPredialObra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/bg_whi_gra"
-            android:text="@color/bg_whi_gra"
+            android:textColorHint="@color/municipioColor"
             android:layout_marginBottom="10dp"
+            android:layout_margin="5dp"
             android:hint="@string/cuentaPredialObra">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textCuentaPredialObra"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/bg_whi_gra"
+                android:paddingLeft="10dp"
                 android:clickable="false"
                 android:cursorVisible="false"
                 android:focusable="false"
@@ -49,10 +51,11 @@
             android:id="@+id/layoutUbicaionObra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/bg_whi_gra"
+            android:textColorHint="@color/municipioColor"
             android:hint="@string/ubicacionObra"
             android:layout_marginBottom="10dp"
-            app:endIconTint="@color/bg_whi_gra"
+            android:layout_margin="5dp"
+            app:endIconTint="@color/municipioColor"
             app:endIconDrawable="@drawable/ic_home_black_24dp"
             app:endIconMode="custom">
 
@@ -60,6 +63,8 @@
                 android:id="@+id/textUbicacionObra"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/bg_whi_gra"
+                android:paddingLeft="10dp"
                 android:clickable="false"
                 android:cursorVisible="false"
                 android:focusable="false"
@@ -70,14 +75,17 @@
             android:id="@+id/layoutDestinoObra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/bg_whi_gra"
+            android:textColorHint="@color/municipioColor"
             android:layout_marginBottom="10dp"
+            android:layout_margin="5dp"
             android:hint="@string/destinoObra">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textDestinoObra"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/bg_whi_gra"
+                android:paddingLeft="10dp"
                 android:clickable="false"
                 android:cursorVisible="false"
                 android:focusable="false"
@@ -87,15 +95,18 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layoutSuperficieObra"
             android:layout_width="match_parent"
-            android:textColorHint="@color/bg_whi_gra"
+            android:textColorHint="@color/municipioColor"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:layout_margin="5dp"
             android:hint="@string/superficieObra">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textSuperficieObra"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/bg_whi_gra"
+                android:paddingLeft="10dp"
                 android:clickable="false"
                 android:cursorVisible="false"
                 android:focusable="false"

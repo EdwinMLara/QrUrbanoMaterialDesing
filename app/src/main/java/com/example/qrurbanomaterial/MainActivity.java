@@ -1,5 +1,6 @@
 package com.example.qrurbanomaterial;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -10,6 +11,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -88,7 +90,13 @@ public class MainActivity extends AppCompatActivity {
 
         if(cancel){
             textInputLayoutUsername.setErrorEnabled(true);
+            int whiteInt = adjustAlpha(0xFFFFFFFF, 0.5f);
+            int whiteIntLetter = adjustAlpha(0xFFFFFFFF,  1f);
+            editTextUsername.setBackgroundColor(whiteInt);
+            editTextUsername.setTextColor(whiteIntLetter);
             textInputLayoutPassword.setErrorEnabled(true);
+            editTextPassword.setBackgroundColor(whiteInt);
+            editTextPassword.setTextColor(whiteIntLetter);
             progressBar.setVisibility(View.GONE);
         }else{
             if(ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED){
@@ -97,6 +105,15 @@ public class MainActivity extends AppCompatActivity {
                 makeRequest();
             }
         }
+    }
+
+    @ColorInt
+    public static int adjustAlpha(@ColorInt int color, float factor) {
+        int alpha = Math.round(Color.alpha(color) * factor);
+        int red = Color.red(color);
+        int green = Color.green(color);
+        int blue = Color.blue(color);
+        return Color.argb(alpha, red, green, blue);
     }
 
     public void makeRequest(){

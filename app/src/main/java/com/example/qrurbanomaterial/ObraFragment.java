@@ -48,7 +48,7 @@ public class ObraFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         textCuentaPredialObra.setText(String.valueOf(li.getPredial_obra()));
         textUbicaionObra.setText(li.getUbicaion_obra());
-        textDestinoObra.setText(li.getObservaciones());
+        textDestinoObra.setText(li.getDestino_obra());
         textSuperficieObra.setText(String.valueOf(li.getSuperficie_obra()) + "M");
     }
 }
