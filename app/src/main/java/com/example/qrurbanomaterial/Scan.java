@@ -21,8 +21,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import retrofit2.Call;
@@ -31,10 +29,8 @@ import retrofit2.Response;
 
 import com.google.android.material.appbar.MaterialToolbar;
 
-import java.net.URLEncoder;
-import java.util.Iterator;
-
 public class Scan extends AppCompatActivity {
+    private long backPressedTime;
     private static final String TAG = Scan.class.getSimpleName();
     private Button scan;
     private MaterialToolbar toolbar;
@@ -80,9 +76,7 @@ public class Scan extends AppCompatActivity {
                         Toast.makeText(Scan.this,"buscar",Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.logout:
-                        Intent intentLogout  = new Intent(Scan.this,MainActivity.class);
-                        intentLogout.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        startActivity(intentLogout);
+                        moveToMainActivity();
                         break;
                     default:
                         throw new IllegalStateException("Unexpected value: " + item.getItemId());
@@ -153,16 +147,22 @@ public class Scan extends AppCompatActivity {
                 if(responseJson.has("error")){
                     JsonObject errorJson = responseJson.getAsJsonObject("error");
                     Log.v(TAG,errorJson.toString());
-                    AlertDialog alertDialog = new AlertDialog.Builder(Scan.this).create();
-                    alertDialog.setTitle("status");
-                    alertDialog.setMessage(errorJson.get("message").getAsString());
-                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    dialog.dismiss();
-                                }
-                            });
-                    alertDialog.show();
+
+                    int status = errorJson.get("status").getAsInt();
+                    if(status == 301){
+                        moveToMainActivity();
+                    }else {
+                        AlertDialog alertDialog = new AlertDialog.Builder(Scan.this).create();
+                        alertDialog.setTitle("status");
+                        alertDialog.setMessage(errorJson.get("message").getAsString());
+                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                });
+                        alertDialog.show();
+                    }
                 }
 
                 if(responseJson.has("response")){
@@ -193,4 +193,21 @@ public class Scan extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        if(backPressedTime + 2000 > System.currentTimeMillis()){
+            moveTaskToBack(true);
+        }else{
+            Toast.makeText(Scan.this,"Presiona otra vez para salir",  Toast.LENGTH_SHORT).show();
+        }
+        backPressedTime = System.currentTimeMillis();
+    }
+
+    public void moveToMainActivity(){
+        SessionManagement sessionManagement = new SessionManagement(Scan.this);
+        sessionManagement.removeSession();
+        Intent intentLogout  = new Intent(Scan.this,MainActivity.class);
+        intentLogout.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intentLogout);
+    }
 }

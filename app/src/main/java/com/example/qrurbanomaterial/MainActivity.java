@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -33,6 +34,8 @@ import static android.widget.Toast.LENGTH_SHORT;
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
     public static final int REQUEST_CODE_INTERNET_PERMISSION = 20;
+
+    public static Context context;
 
     private TextInputLayout textInputLayoutUsername;
     private TextInputLayout textInputLayoutPassword;
@@ -65,6 +68,18 @@ public class MainActivity extends AppCompatActivity {
                 attempLogin();
             }
         });
+    }
+
+    @Override
+    protected void onStart(){
+        SessionManagement sessionManagement = new SessionManagement(MainActivity.this);
+        String sessionToken = sessionManagement.getSessionUser();
+
+        if(!sessionToken.equals("none")){
+            token = sessionToken;
+            moveToScanActivity();
+        }
+        super.onStart();
     }
 
     private void attempLogin(){
@@ -135,11 +150,12 @@ public class MainActivity extends AppCompatActivity {
                         JsonObject result = responseServer.getAsJsonObject("result");
                         token = result.get("token").getAsString();
 
-                        Intent tokenLoginIntent = new Intent(MainActivity.this, Scan.class);
-                        tokenLoginIntent.putExtra("token", token);
-                        tokenLoginIntent.putExtra("isLogged", true);
+                        SessionManagement sessionManagement = new SessionManagement(MainActivity.this);
+                        sessionManagement.saveSession(token);
+
                         progressBar.setVisibility(View.GONE);
-                        startActivity(tokenLoginIntent);
+
+                        moveToScanActivity();
                     }else{
                         progressBar.setVisibility(View.GONE);
                         AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
@@ -161,6 +177,13 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, t.getMessage(), LENGTH_SHORT).show();
             }
         });
+    }
+
+    public void moveToScanActivity(){
+        Intent tokenLoginIntent = new Intent(MainActivity.this, Scan.class);
+        tokenLoginIntent.putExtra("token", token);
+        tokenLoginIntent.putExtra("isLogged", true);
+        startActivity(tokenLoginIntent);
     }
 
     @Override
