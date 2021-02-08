@@ -143,17 +143,16 @@ public class Scan extends AppCompatActivity {
             @Override
             public void onResponse(retrofit2.Call<JsonObject> call, Response<JsonObject> response) {
                 JsonObject responseJson = response.body();
-
+                Log.v(TAG,responseJson.toString());
                 if(responseJson.has("error")){
                     JsonObject errorJson = responseJson.getAsJsonObject("error");
-                    Log.v(TAG,errorJson.toString());
 
                     int status = errorJson.get("status").getAsInt();
                     if(status == 301){
                         moveToMainActivity();
                     }else {
                         AlertDialog alertDialog = new AlertDialog.Builder(Scan.this).create();
-                        alertDialog.setTitle("status");
+                        alertDialog.setTitle("Qr error");
                         alertDialog.setMessage(errorJson.get("message").getAsString());
                         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                                 new DialogInterface.OnClickListener() {
