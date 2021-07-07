@@ -22,9 +22,6 @@ public class LicenciaModel implements Parcelable {
     private String domicilio_suscriptor = "";
     private String observaciones = "";
     private String numero_licencia = "";
-    private String image = "";
-    private String pdf = "";
-    private String numero_recibo = "";
 
     public LicenciaModel(){}
 
@@ -47,9 +44,6 @@ public class LicenciaModel implements Parcelable {
         domicilio_suscriptor = in.readString();
         observaciones = in.readString();
         numero_licencia = in.readString();
-        image = in.readString();
-        pdf = in.readString();
-        numero_recibo = in.readString();
 
     }
     public static final Parcelable.Creator<LicenciaModel > CREATOR = new Parcelable.Creator<LicenciaModel >() {
@@ -63,14 +57,6 @@ public class LicenciaModel implements Parcelable {
             return new LicenciaModel [size];
         }
     };
-
-    public void setNumero_recibo(String numero_recibo) {
-        this.numero_recibo = numero_recibo;
-    }
-
-    public String getNumero_recibo() {
-        return numero_recibo;
-    }
 
     public String getVegencia1() {
         return vigencia1;
@@ -212,22 +198,6 @@ public class LicenciaModel implements Parcelable {
         this.numero_licencia = numero_licencia;
     }
 
-    public String getImage() {
-        return this.image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public String getPdf() {
-        return this.pdf;
-    }
-
-    public void setPdf(String pdf) {
-        this.pdf = pdf;
-    }
-
     @Override
     public int describeContents() {
         return 0;
@@ -253,8 +223,5 @@ public class LicenciaModel implements Parcelable {
         dest.writeString(domicilio_suscriptor);
         dest.writeString(observaciones);
         dest.writeString(numero_licencia);
-        dest.writeString(image);
-        dest.writeString(pdf);
-        dest.writeString(numero_recibo);
     }
 }

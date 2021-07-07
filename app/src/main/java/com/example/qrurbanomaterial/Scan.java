@@ -108,6 +108,7 @@ public class Scan extends AppCompatActivity {
                 return;
 
             String result = data.getStringExtra("com.blikoon.qrcodescanner.error_decoding_image");
+            Log.v(TAG,result);
             if (result != null) {
                 AlertDialog alertDialog = new AlertDialog.Builder(Scan.this).create();
                 alertDialog.setTitle("Scan Error");
@@ -143,7 +144,7 @@ public class Scan extends AppCompatActivity {
             @Override
             public void onResponse(retrofit2.Call<JsonObject> call, Response<JsonObject> response) {
                 JsonObject responseJson = response.body();
-                Log.v(TAG,responseJson.toString());
+                //Log.v(TAG,responseJson.toString());
                 if(responseJson.has("error")){
                     JsonObject errorJson = responseJson.getAsJsonObject("error");
 
@@ -166,16 +167,16 @@ public class Scan extends AppCompatActivity {
 
                 if(responseJson.has("response")){
                     JsonObject responseServer = responseJson.getAsJsonObject("response");
-                    Log.v(TAG,responseServer.toString());
+
                     int status = responseServer.get("status").getAsInt();
                     if (status == 200) {
 
                         JsonObject jsonResult = responseServer.getAsJsonObject("result");
+
                         if(jsonResult != null){
-                            JsonObject jsonLicencia = jsonResult.getAsJsonObject("licencia");
 
                             Intent intentDatosLicencia = new Intent(Scan.this,Licencia.class);
-                            intentDatosLicencia.putExtra("jsonStringLicencia",jsonLicencia.toString());
+                            intentDatosLicencia.putExtra("jsonStringLicencia",jsonResult.toString());
 
                             startActivity(intentDatosLicencia);
                         }

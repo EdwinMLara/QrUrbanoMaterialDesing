@@ -44,6 +44,5 @@ public class PropieatarioFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         textPropietarioName.setText(li.getNombre_suscriptor());
         textPropietarioDomicilio.setText(li.getDomicilio_suscritor());
-        textPropietarioNumeroRegistro.setText(String.valueOf(li.getNumero_recibo()));
     }
 }
